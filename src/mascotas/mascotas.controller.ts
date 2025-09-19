@@ -28,7 +28,7 @@ export class MascotasController {
 
     @Get(':id')
     findOne(@Param('id') id: number): any {
-        console.log("Buscando mascota con id:", id);
+        console.log("Buscando mascota con ID:", id);
         return this.mascotas.find((mascota) => mascota.id === Number (id));
     }
 
