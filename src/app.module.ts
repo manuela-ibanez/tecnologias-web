@@ -7,9 +7,11 @@ import { MascotasController } from './mascotas/mascotas.controller';
 import { ServiciosController } from './servicios/servicios.controller';
 import { TurnosController } from './turnos/turnos.controller';
 import { AdminController } from './admin/admin.controller';
+import { MascotasService } from './mascotas/mascotas.service';
+import { MascotasModule } from './mascotas/mascotas.module';
 
 @Module({
-  imports: [],
+  imports: [MascotasModule],
   controllers: [AppController,
                 UsuariosController, 
                 AutentificacionController, 
@@ -17,6 +19,6 @@ import { AdminController } from './admin/admin.controller';
                 ServiciosController, 
                 TurnosController, 
                 AdminController],
-  providers: [AppService],
+  providers: [AppService, MascotasService],
 })
 export class AppModule {}
