@@ -40,4 +40,15 @@ export class UsuariosController {
             return { message: 'Usuario no encontrado' };
         }   
     }
+
+    @Get(':id/mascota') //Obtiene la mascota asociada a un usuario.
+    getMascotaDelUsuario(@Param('id') id: string) {
+      const resultado = this.UsuariosService.getMascotaDelUsuario(Number(id));  //Llama al método del service para que devuelva la mascota del usuario.
+
+    if (!resultado) {
+        return { message: 'Usuario no encontrado' };
+    } 
+
+    return resultado;
+    }
 }
